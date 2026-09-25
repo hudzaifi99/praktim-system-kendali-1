@@ -1,0 +1,16 @@
+ syms t
+>> sym = t^3+2*t+6;
+>> poly = sym2poly(sym) %mengubah polynomial simbolik menjadi matriks polynomial
+
+poly =
+
+     1     0     2     6
+
+>> %mengubah polynomial simbolik menjadi matriks polynomial
+>> symagain = poly2sym(poly)
+ 
+symagain =
+ 
+x^3 + 2*x + 6
+ 
+>> 
