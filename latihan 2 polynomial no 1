@@ -1,0 +1,76 @@
+ p1 = [1 5 3 10]
+
+p1 =
+
+     1     5     3    10
+
+>> p2 = [1 7 5 8 15]
+
+p2 =
+
+     1     7     5     8    15
+
+>> p3 = [1 15 10 6 3 9]
+
+p3 =
+
+     1    15    10     6     3     9
+
+>> p1_value2 = polyval(p1,2)
+
+p1_value2 =
+
+    44
+
+>> p2_value2 = polyval(p2,2)
+
+p2_value2 =
+
+   123
+
+>> p3_value3 = polyval(p3,3)
+
+p3_value3 =
+
+        1800
+
+>> a = [p1_value2 p2_value2 p3_value3]
+
+a =
+
+          44         123        1800
+
+>> b1 = conv(p1,p2)
+
+b1 =
+
+     1    12    43    64   140   149   125   150
+
+>> b = conv(b1,p3)
+
+b =
+
+           1          27         233         835        1605        3192        4381        4934        5390        3957        2616        1575        1350
+
+>> [q,r] = deconv(b1,p3]
+ [q,r] = deconv(b1,p3]
+                     ↑
+Error: Unmatched ']'. Check for missing '['.
+ 
+Did you mean:
+>> b1 = conv(p1,p2)
+
+b1 =
+
+     1    12    43    64   140   149   125   150
+
+>> [q,r] = deconv(b1,p3)
+
+q =
+
+     1    -3    78
+
+
+r =
+
+           0           0           0       -1082        -625        -319         -82        -552
