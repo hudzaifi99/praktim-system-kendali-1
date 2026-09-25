@@ -1,0 +1,52 @@
+% Polynomial
+p = [1 -2 1] % tulis polynomial sbg bentuk vektor baris
+
+p =
+
+     1    -2     1
+
+% mencari/menghitung akar polynomial
+r = roots(p)
+
+r =
+
+     1
+     1
+
+pvalue = polyval(p,1)
+
+pvalue =
+
+     0
+
+pvalue = polyval(p,2)
+
+pvalue =
+
+     1
+
+% penulisan polynomial dalam bentuk simbolik 
+syms p
+sym = t^2-2*t+1
+Unrecognized function or variable 't'.
+ 
+syms t
+sym = t^2-2*t+1
+ 
+sym =
+ 
+t^2 - 2*t + 1
+ 
+%Konversi polynomial bentuk simbolik menjadi matriks
+poly = sym2poly(sym)
+
+poly =
+
+     1    -2     1
+
+%Konversi polynomial bentuk matriks menjadi simbolik
+symagain = poly2sym(poly)
+ 
+symagain =
+ 
+x^2 - 2*x + 1
