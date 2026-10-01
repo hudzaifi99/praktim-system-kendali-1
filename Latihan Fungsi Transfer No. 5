@@ -1,0 +1,57 @@
+syms s
+
+Ga = 45*((s^2+37*s+74)*(s^3+28*s^2+32*s+16)) ...
+    /((s+39)*(s+47)*(s^2+2*s+100)*(s^3+27*s^2+18*s+15));
+
+'Ga symbolic'
+pretty(Ga)
+
+[numga,denga] = numden(Ga);
+
+numga = sym2poly(numga);
+denga = sym2poly(denga);
+
+'Ga polynomial'
+Ga_tf = tf(numga,denga)
+
+'Ga factored'
+Ga_zpk = zpk(Ga_tf)
+
+ans =
+
+    'Ga symbolic'
+
+          2                3       2
+        (s  + 37 s + 74) (s  + 28 s  + 32 s + 16) 45
+-----------------------------------------------------------
+                    2                3       2
+(s + 39) (s + 47) (s  + 2 s + 100) (s  + 27 s  + 18 s + 15)
+
+
+ans =
+
+    'Ga polynomial'
+
+
+Ga_tf =
+ 
+               45 s^5 + 2925 s^4 + 51390 s^3 + 147240 s^2 + 133200 s + 53280
+  ---------------------------------------------------------------------------------------
+  s^7 + 115 s^6 + 4499 s^5 + 70700 s^4 + 553692 s^3 + 5.201e06 s^2 + 3.483e06 s + 2.75e06
+ 
+Continuous-time transfer function.
+Model Properties
+
+ans =
+
+    'Ga factored'
+
+
+Ga_zpk =
+ 
+       45 (s+34.88) (s+26.83) (s+2.122) (s^2 + 1.17s + 0.5964)
+  -----------------------------------------------------------------
+  (s+47) (s+39) (s+26.34) (s^2 + 0.6618s + 0.5695) (s^2 + 2s + 100)
+ 
+Continuous-time zero/pole/gain model.
+Model Properties
