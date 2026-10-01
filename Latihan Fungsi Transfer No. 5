@@ -1,21 +1,28 @@
-syms s
+Soal A
 
-Ga = 45*((s^2+37*s+74)*(s^3+28*s^2+32*s+16)) ...
-    /((s+39)*(s+47)*(s^2+2*s+100)*(s^3+27*s^2+18*s+15));
+>> syms s
+'(a)'
+
+Ga=45*((s^2+37*s+74)*(s^3+28*s^2+32*s+16))...
+/((s+39)*(s+47)*(s^2+2*s+100)*(s^3+27*s^2+18*s+15));
 
 'Ga symbolic'
 pretty(Ga)
 
-[numga,denga] = numden(Ga);
-
-numga = sym2poly(numga);
-denga = sym2poly(denga);
+[numga,denga]=numden(Ga);
+numga=sym2poly(numga);
+denga=sym2poly(denga);
 
 'Ga polynomial'
-Ga_tf = tf(numga,denga)
+Ga=tf(numga,denga)
 
 'Ga factored'
-Ga_zpk = zpk(Ga_tf)
+Ga=zpk(Ga)
+
+ans =
+
+    '(a)'
+
 
 ans =
 
@@ -33,7 +40,7 @@ ans =
     'Ga polynomial'
 
 
-Ga_tf =
+Ga =
  
                45 s^5 + 2925 s^4 + 51390 s^3 + 147240 s^2 + 133200 s + 53280
   ---------------------------------------------------------------------------------------
@@ -47,11 +54,77 @@ ans =
     'Ga factored'
 
 
-Ga_zpk =
+Ga =
  
        45 (s+34.88) (s+26.83) (s+2.122) (s^2 + 1.17s + 0.5964)
   -----------------------------------------------------------------
   (s+47) (s+39) (s+26.34) (s^2 + 0.6618s + 0.5695) (s^2 + 2s + 100)
+ 
+Continuous-time zero/pole/gain model.
+Model Properties
+
+=========================================================================================
+Soal B
+
+>> syms s
+'(b)'
+
+Gb=56*((s+14)*(s^3+49*s^2+62*s+53))...
+/((s^3+81*s^2+76*s+65)*(s^2+88*s+33)*(s^2+56*s+77));
+
+'Gb symbolic'
+pretty(Gb)
+
+[numb,denb]=numden(Gb);
+numb=sym2poly(numb);
+denb=sym2poly(denb);
+
+'Gb polynomial'
+Gb=tf(numb,denb)
+
+'Gb factored'
+Gb=zpk(Gb)
+
+ans =
+
+    '(b)'
+
+
+ans =
+
+    'Gb symbolic'
+
+                      3       2
+           (s + 14) (s  + 49 s  + 62 s + 53) 56
+----------------------------------------------------------
+  2                2                3       2
+(s  + 88 s + 33) (s  + 56 s + 77) (s  + 81 s  + 76 s + 65)
+
+
+ans =
+
+    'Gb polynomial'
+
+
+Gb =
+ 
+                      56 s^4 + 3528 s^3 + 41888 s^2 + 51576 s + 41552
+  ----------------------------------------------------------------------------------------
+  s^7 + 225 s^6 + 16778 s^5 + 427711 s^4 + 1.093e06 s^3 + 1.189e06 s^2 + 753676 s + 165165
+ 
+Continuous-time transfer function.
+Model Properties
+
+ans =
+
+    'Gb factored'
+
+
+Gb =
+ 
+                  56 (s+47.72) (s+14) (s^2 + 1.276s + 1.111)
+  ---------------------------------------------------------------------------
+  (s+87.62) (s+80.06) (s+54.59) (s+1.411) (s+0.3766) (s^2 + 0.9391s + 0.8119)
  
 Continuous-time zero/pole/gain model.
 Model Properties
