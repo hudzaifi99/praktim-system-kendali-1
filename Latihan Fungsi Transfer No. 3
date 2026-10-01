@@ -1,0 +1,21 @@
+>> Gtf = tf([1 25 20 15 42], ...
+         [1 13 9 37 35 50])
+
+Gtf =
+ 
+      s^4 + 25 s^3 + 20 s^2 + 15 s + 42
+  -----------------------------------------
+  s^5 + 13 s^4 + 9 s^3 + 37 s^2 + 35 s + 50
+ 
+Continuous-time transfer function.
+Model Properties
+>> Gzpk = zpk(Gtf)
+
+Gzpk =
+ 
+        (s+24.2) (s+1.35) (s^2 - 0.5462s + 1.286)
+  ------------------------------------------------------
+  (s+12.5) (s^2 + 1.463s + 1.493) (s^2 - 0.964s + 2.679)
+ 
+Continuous-time zero/pole/gain model.
+Model Properties
