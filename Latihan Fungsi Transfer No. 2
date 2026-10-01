@@ -1,0 +1,23 @@
+>> 
+% Bentuk factored
+Gzpk = zpk([-15 -26 -72], ...
+    [0 -55 roots([1 5 30])' roots([1 27 52])' -56], 5)
+
+Gzpk =
+ 
+                5 (s+15) (s+26) (s+72)
+  ---------------------------------------------------
+  s (s+55) (s+56) (s+24.91) (s+2.087) (s^2 + 5s + 30)
+ 
+Continuous-time zero/pole/gain model.
+Model Properties
+>> Gp = tf(Gzpk)
+
+Gp =
+ 
+                         5 s^3 + 565 s^2 + 16710 s + 140400
+  --------------------------------------------------------------------------------
+  s^7 + 143 s^6 + 6849 s^5 + 123717 s^4 + 7.887e05 s^3 + 3.469e06 s^2 + 4.805e06 s
+ 
+Continuous-time transfer function.
+Model Properties
