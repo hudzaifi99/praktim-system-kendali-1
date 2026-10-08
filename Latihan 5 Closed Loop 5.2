@@ -1,0 +1,18 @@
+>> % Fungsi transfer sistem 1,2 dan 3
+G1=tf([1 2],[1 4 3]);
+G2=tf(1,[1 1]);
+G3=tf(1,[1 2]);
+% Hitunglah fungsi transfer 1, 2
+G12=series(G1,G2);
+% Hitunglah fungsi transfer βinal
+T=feedback(G12,G3)
+
+T = 
+
+           s^2 + 4 s + 4
+  -------------------------------
+  s^4 + 7 s^3 + 17 s^2 + 18 s + 8
+ 
+Continuous-time transfer function.
+Model Properties
+>> 
