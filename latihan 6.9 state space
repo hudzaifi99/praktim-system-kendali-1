@@ -1,0 +1,23 @@
+ num=[1 3 2]; den=[1 8 19 12];
+sys=tf(num,den);
+sys
+sys_min=minreal(sys)
+
+sys = 
+
+       s^2 + 3 s + 2
+  -----------------------
+  s^3 + 8 s^2 + 19 s + 12
+ 
+Continuous-time transfer function.
+Model Properties
+
+sys_min = 
+
+      s + 2
+  --------------
+  s^2 + 7 s + 12
+ 
+Continuous-time transfer function.
+Model Properties
+>> 
