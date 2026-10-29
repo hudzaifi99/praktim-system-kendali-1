@@ -1,0 +1,13 @@
+ num=[8 10];
+den=[1 5 1 5 13];
+[Acc, Bcc, Ccc, Dcc]=tf2ss(num, den);
+>> A=fliplr(flipud(Acc));
+>> B=flipud(Bcc);
+>> C=fliplr(Ccc);
+>> D=Dcc
+
+D =
+
+     0
+
+>> 
